@@ -1,0 +1,305 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+  background: rgb(255, 226, 226);
+}
+
+h1{
+  font-size: 40px;
+  text-shadow: 2px 2px #bd3434;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 5px;
+  padding-left: 20px;
+  text-shadow: 2px 2px #bd3434;
+}
+
+h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-top: 2px;
+  color: white;
+}
+
+.tinyText {
+  font-size: 12px !important;
+  text-shadow: 1px 0.5px #bd34347e;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(255, 213, 213);
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.Nav {
+  padding-top: 5px;
+  z-index: 2;
+  background: rgba(255, 70, 73, 1);
+  width: 100%;
+  color: white;
+  position: fixed; 
+}
+
+.slider {
+	overflow-y: hidden;
+	height: 50px; /* approximate, maybe fix later */
+  transition-property: all;
+	transition-duration: .5s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.slider.closed {
+  /* woooooosh */
+	height: 0;
+  padding-bottom: 2px;
+  transition-property: all;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.big-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.menucontainer {
+  max-width: 850px;
+  padding-top: 100px;
+  font-size: 25px;
+  margin-left: 0px;
+  align-content: left;  
+}
+
+.pizzacontainer {
+  margin-top: 100px;
+  width:  calc(100% - 870px);
+  height: 800px;
+  font-size: 25px;
+  margin-left: 0px;
+  background-color: #ffb390; 
+  border-radius: 10px;
+  align-content: right;
+  position: fixed;
+  right: 0px;
+}
+
+@media (max-width : 1830px) {
+  .pizzacontainer {
+    width: calc(100% - 870px);
+  }
+}
+
+@media (max-width : 1250px) {
+
+  .pizzacontainer {
+    position: unset;
+    width: 850px;
+    height: 400px;
+    margin-top: 10px;
+  }
+}
+
+
+h2:hover {
+  border-radius: 0px 10px 10px 0px ;
+  background-color:rgb(255, 70, 73);
+}
+
+.h2active:hover {
+  border-radius: 0px 10px 0px 0px ;
+  background-color:rgb(255, 70, 73);
+}
+
+.custom-card-header {
+  background-color: #ff6464; 
+  color: white; 
+  text-align: left;
+  border-radius: 0px 10px 10px 0px ;
+  margin-bottom: 1px;
+}
+
+.custom-card-body {
+  background-color: #ffd3d3 ; 
+  border-color: transparent;
+  color: black;
+  font-size: 15px;
+}
+
+.panel {
+  max-height: 500px;
+  /* background-color: #ffd3d3 ;  */
+  background-color: #ffcece ; 
+  border-color: transparent;
+  color: black;
+  font-size: 15px;
+  border-radius: 0px 0px 10px 0px ;
+  overflow: hidden;
+  transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+.panel.closed {
+	max-height: 0;  
+  transition-property: all;
+	transition-duration: 0.3s;
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+
+/*Makes it so certain items cannot be selected, like menu text*/
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+.ingredientcontainer {
+  width: inherit;
+  display: flex;
+  padding: 10px; 
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type:none;
+}
+
+ul li {
+  margin: 0px;
+  padding-top: 20px; 
+  padding-bottom: 20px; 
+  min-width: 33%;
+  text-align: left;
+  padding-left: 80px;
+  justify-content: center;
+}
+
+@media (max-width : 700px) {
+  ul li {
+    padding-left: 10px;
+    padding-right: 0px;
+    justify-content: center;
+  }
+  
+  .pizzacontainer {
+    position: unset;
+    width: 850px;
+    height: 300px;
+    margin-top: 10px;
+  }
+}
+
+
+.btn {
+  padding: 10px; 
+  border-radius: 15px;
+  border: none; 
+  font-size: 20px; 
+  outline: none;
+  justify-content: center; 
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer; 
+  min-width: 100px;
+}
+
+.dark-btn {
+  border: 2px solid #ff7b7b;
+  color: #e6e6e6;
+  background: #ff7b7b;
+}
+
+.dark-btn-toggled{
+  color: #e6e6e6;
+  background: #ff4545;
+  border-radius: 10px;
+}
+
+
+.dark-btn:hover, .dark-btn-toggled:hover{
+  color: #e6e6e6;
+  background: #ff4545;
+  border-radius: 10px;
+}
+
+
+.icon-right {
+  color: white;
+  margin-top: 11px; 
+  margin-right: 15px;
+  float:right; 
+  overflow: hidden;
+  transition-duration: 0.1s;
+  transition-property: transform;
+}
+
+.icon-right.closed {
+  transform: rotate(180deg);
+  overflow: hidden;
+  transition-duration: 0.1s;
+  transition-property: transform;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  background: lightcoral;
+}
+
+.cust-footer {
+  left:0;
+  bottom:0;
+  right:0;
+  background: rgba(255, 70, 73, 1);
+  padding: 3px;
+  width: 100%;
+  color: white;
+  position: fixed; 
+  z-index: 2;
+  transition: opacity .2s ease; 
+}
+
+.iconlabel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+  margin-left: 10px;
+  margin-top: 2px;
+}
